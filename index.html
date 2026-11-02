@@ -12,6 +12,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fredoka:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="css/styles.css" />
 		<link rel="stylesheet" href="css/responsive.css" />
+		<script defer src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
 		<script defer src="js/settings.js"></script>
 		<script defer src="js/catalog.js"></script>
 		<script defer src="js/store.js"></script>
@@ -19,7 +20,7 @@
 	</head>
 	<body>
 		<a class="skip-link" href="#main">Skip to main content</a>
-		<div class="announcement"><span class="announcement-sparkle">✦</span><span id="announcement-text">Handmade magic, Halloween edition</span><span class="announcement-sparkle">✦</span></div>
+		<div class="announcement"><span class="announcement-sparkle"><i data-lucide="sparkles" aria-hidden="true"></i></span><span id="announcement-text">Handmade magic, Halloween edition</span><span class="announcement-sparkle"><i data-lucide="sparkles" aria-hidden="true"></i></span></div>
 		<header class="site-header" id="top">
 			<div class="container nav-shell">
 				<a class="brand" href="#top" aria-label="Charmistry Co. home">
@@ -29,9 +30,9 @@
 				<nav class="desktop-nav" aria-label="Main navigation"><a href="#shop">Shop</a><a href="#how-it-works">How it works</a><a href="#games">Booth games</a><a href="#about">Our story</a><a href="#visit">Find us</a></nav>
 				<div class="nav-actions">
 					<button class="cart-trigger" type="button" id="cart-open" aria-label="Open shopping bag">
-						<span class="bag-icon" aria-hidden="true">♧</span> <span class="cart-label">My bag</span><span class="cart-count" id="cart-count">0</span>
+						<span class="bag-icon" aria-hidden="true"><i data-lucide="shopping-bag"></i></span> <span class="cart-label">My bag</span><span class="cart-count" id="cart-count">0</span>
 					</button>
-					<button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false"><span></span><span></span><span></span></button>
+					<button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false"><i data-lucide="menu" aria-hidden="true"></i></button>
 				</div>
 			</div>
 			<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden><a href="#shop">Shop</a><a href="#how-it-works">How it works</a><a href="#games">Booth games</a><a href="#about">Our story</a><a href="#visit">Find us</a></nav>
@@ -48,22 +49,22 @@
 						</h1>
 						<p class="hero-lede">Unwrap a surprise, adopt a fuzzy little friend, and make memories at the cutest spooky booth in school.</p>
 						<div class="hero-actions">
-							<a class="button button-primary" href="#shop">Shop the cute stuff <span aria-hidden="true">↗</span></a
-							><a class="button button-outline" href="#games">Explore booth games <span aria-hidden="true">→</span></a>
+							<a class="button button-primary" href="#shop">Shop the cute stuff <i data-lucide="arrow-up-right" aria-hidden="true"></i></a
+							><a class="button button-outline" href="#games">Explore booth games <i data-lucide="arrow-right" aria-hidden="true"></i></a>
 						</div>
 						<!-- <div class="hero-trust"><span class="trust-emoji">🧡</span><span>Handmade with care</span><span class="trust-dot"></span><span>School-booth pickup</span><span class="trust-dot"></span><span>Big on fun</span></div> -->
 					</div>
 					<div class="hero-art-wrap" aria-label="Illustration of a happy ghost, mysterious gift pouch, and fuzzy wire charms" role="img">
 						<div class="hero-art-back"></div>
 						<img class="hero-art" src="assets/images/hero-magic.svg" alt="" width="690" height="610" />
-						<div class="floating-note note-top"><span>✦</span> SPOOKY CUTE<br /><strong>100% OUR VIBE</strong></div>
-						<div class="floating-note note-bottom"><span aria-hidden="true">♥</span> MADE WITH<br /><strong>A LITTLE MAGIC</strong></div>
+						<div class="floating-note note-top"><i data-lucide="sparkles" aria-hidden="true"></i> SPOOKY CUTE<br /><strong>100% OUR VIBE</strong></div>
+						<div class="floating-note note-bottom"><i data-lucide="heart" aria-hidden="true"></i> MADE WITH<br /><strong>A LITTLE MAGIC</strong></div>
 					</div>
 				</div>
 				<div class="hero-ticker" aria-hidden="true">
 					<div class="ticker-track">
-						<span>✳ CUTE & CREEPY</span><span>✳ HANDMADE CHARMS</span><span>✳ MYSTERY SURPRISES</span><span>✳ BOO-TIFUL MEMORIES</span><span>✳ CUTE & CREEPY</span><span>✳ HANDMADE CHARMS</span><span>✳ MYSTERY SURPRISES</span
-						><span>✳ BOO-TIFUL MEMORIES</span>
+						<span><i data-lucide="sparkles"></i> CUTE & CREEPY</span><span><i data-lucide="sparkles"></i> HANDMADE CHARMS</span><span><i data-lucide="sparkles"></i> MYSTERY SURPRISES</span><span><i data-lucide="sparkles"></i> BOO-TIFUL MEMORIES</span><span><i data-lucide="sparkles"></i> CUTE & CREEPY</span><span><i data-lucide="sparkles"></i> HANDMADE CHARMS</span><span><i data-lucide="sparkles"></i> MYSTERY SURPRISES</span
+						><span><i data-lucide="sparkles"></i> BOO-TIFUL MEMORIES</span>
 					</div>
 				</div>
 			</section>
@@ -76,10 +77,10 @@
 							<h2>Little treats, <em>big</em> delight<span class="orange-punct">.</span></h2>
 							<p>Pick your surprise or create a character that feels just like you.</p>
 						</div>
-						<div class="heading-doodle" aria-hidden="true">✳<span>♡</span></div>
+						<div class="heading-doodle" aria-hidden="true"><i data-lucide="sparkles"></i><i data-lucide="heart"></i></div>
 					</div>
 					<div class="demo-notice" id="demo-notice" hidden style="display: none">
-						<span aria-hidden="true">ⓘ</span><span><strong>Preview catalog:</strong> Prices and stock are examples, not confirmed booth offers. The team can update them before launch.</span>
+						<i data-lucide="info" aria-hidden="true"></i><span><strong>Preview catalog:</strong> Prices and stock are examples, not confirmed booth offers. The team can update them before launch.</span>
 					</div>
 					<div class="shop-toolbar">
 						<div class="filters" role="group" aria-label="Filter by category">
@@ -87,7 +88,7 @@
 							><button class="filter-pill" type="button" data-filter="fuzzy" aria-pressed="false">Fuzzy wire friends</button>
 						</div>
 						<div class="toolbar-actions">
-							<label class="search-box"><span aria-hidden="true">⌕</span><span class="sr-only">Search products</span><input type="search" id="product-search" placeholder="Find your fave..." /></label
+							<label class="search-box"><i data-lucide="search" aria-hidden="true"></i><span class="sr-only">Search products</span><input type="search" id="product-search" placeholder="Find your fave..." /></label
 							><label class="sort-box"
 								><span class="sr-only">Sort products</span
 								><select id="product-sort">
@@ -101,7 +102,7 @@
 					</div>
 					<div class="product-grid" id="product-grid" aria-live="polite"></div>
 					<div id="product-empty" class="empty-search" hidden>
-						<div>👻</div>
+						<div><i data-lucide="ghost" aria-hidden="true"></i></div>
 						<h3>Nothing hiding here!</h3>
 						<p>Try a different search or category.</p>
 						<button class="button button-outline" type="button" id="clear-filters">Show all treats</button>
@@ -120,19 +121,19 @@
 					<div class="steps-grid">
 						<article class="step-card">
 							<span class="step-number">01</span>
-							<div class="step-icon purple-step">✳</div>
+							<div class="step-icon purple-step"><i data-lucide="sparkles"></i></div>
 							<h3>Pick your magic</h3>
 							<p>Browse mystery pouches or choose the fuzzy wire character that makes you smile.</p>
 						</article>
 						<article class="step-card">
 							<span class="step-number">02</span>
-							<div class="step-icon orange-step">✎</div>
+							<div class="step-icon orange-step"><i data-lucide="palette"></i></div>
 							<h3>Make it yours</h3>
 							<p>Choose a character and colors, or tell us your own idea in the special request box.</p>
 						</article>
 						<article class="step-card">
 							<span class="step-number">03</span>
-							<div class="step-icon red-step">♡</div>
+							<div class="step-icon red-step"><i data-lucide="heart"></i></div>
 							<h3>Meet us at the booth</h3>
 							<p>Prepare an order request, then visit us at TNHS to confirm availability, payment, and pickup.</p>
 						</article>
@@ -146,8 +147,8 @@
 						<!-- <div class="kicker"><span class="kicker-line"></span> MORE THAN A LITTLE SHOP</div> -->
 						<h2>Come for the charms.<br /><em>Stay for the BOO!</em></h2>
 						<p>Bring your friends and try our playful, Halloween-themed school-booth challenges. Games are enjoyed in person, not booked online.</p>
-						<div class="games-spark" aria-hidden="true">✧ ✦ ✧</div>
-						<a href="#visit" class="button button-light">Find our booth <span aria-hidden="true">↗</span></a>
+						<div class="games-spark" aria-hidden="true"><i data-lucide="sparkles"></i></div>
+						<a href="#visit" class="button button-light">Find our booth <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
 					</div>
 					<div class="game-cards" id="games-grid"></div>
 				</div>
@@ -157,7 +158,7 @@
 				<div class="container craft-layout">
 					<div class="craft-art">
 						<img src="assets/images/quality-magic.svg" alt="Smiling handmade charms being checked and packed carefully" loading="lazy" width="550" height="480" />
-						<div class="craft-stamp">MADE WITH<br /><strong>CARE!</strong> ✳</div>
+						<div class="craft-stamp">MADE WITH<br /><strong>CARE!</strong> <i data-lucide="sparkles"></i></div>
 					</div>
 					<div class="craft-content">
 						<!-- <div class="kicker"><span class="kicker-line"></span> OUR LITTLE PROMISE</div> -->
@@ -165,21 +166,21 @@
 						<p>We want every Charmistry Co. experience to be safe, presentable, and full of happy surprises.</p>
 						<div class="quality-points">
 							<div class="quality-point">
-								<div class="check-icon">✓</div>
+								<div class="check-icon"><i data-lucide="check"></i></div>
 								<div>
 									<h3>Every pouch gets a final check</h3>
 									<p>Contents are counted, clean, in good condition, and securely packed before selling.</p>
 								</div>
 							</div>
 							<div class="quality-point">
-								<div class="check-icon">✓</div>
+								<div class="check-icon"><i data-lucide="check"></i></div>
 								<div>
 									<h3>Every fuzzy friend is inspected</h3>
 									<p>We check each shape, attachment, and edge. Any defective piece is fixed or replaced.</p>
 								</div>
 							</div>
 							<div class="quality-point">
-								<div class="check-icon">✓</div>
+								<div class="check-icon"><i data-lucide="check"></i></div>
 								<div>
 									<h3>Every game puts safety first</h3>
 									<p>We check equipment, explain rules clearly, assist players, and promote fair play.</p>
@@ -192,7 +193,7 @@
 
 			<section class="section about-section" id="about">
 				<div class="container about-panel">
-					<div class="about-deco" aria-hidden="true">✳<span>♥</span></div>
+					<div class="about-deco" aria-hidden="true"><i data-lucide="sparkles"></i><i data-lucide="heart"></i></div>
 					<div class="about-main">
 						<!-- <div class="kicker"><span class="kicker-line"></span> THE STORY BEHIND THE MAGIC</div> -->
 						<h2>A little <em>charm</em>.<br />A lot of <em>chemistry</em>.</h2>
@@ -213,20 +214,20 @@
 						<h2>Find us where the<br /><em>magic happens.</em></h2>
 						<p>We’d love to see you in person. Come check out our creations, discover surprises, and join the fun.</p>
 						<div class="location-block">
-							<span class="location-icon">⌖</span>
+							<span class="location-icon"><i data-lucide="map-pin"></i></span>
 							<div>
 								<strong>Charmistry Co. School Booth</strong>
 								<p id="location-address">Taguig National High School, A. Reyes Street, New Lower Bicutan, Taguig City</p>
 								<small id="location-landmark">Beside the “I Love TNHS” signage</small>
 							</div>
 						</div>
-						<a id="maps-link" class="button button-primary" href="https://www.google.com/maps/search/?api=1&query=Taguig+National+High+School" target="_blank" rel="noopener noreferrer">Find directions <span aria-hidden="true">↗</span></a>
+						<a id="maps-link" class="button button-primary" href="https://www.google.com/maps/search/?api=1&query=Taguig+National+High+School" target="_blank" rel="noopener noreferrer">Find directions <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
 						<p class="visit-hint">Booth availability and opening hours are confirmed by the school organizers.</p>
 					</div>
 					<div class="visit-visual">
 						<div class="visit-visual-inner">
 							<img src="assets/images/location-booth.svg" alt="Illustrated Charmistry Co. booth sign with a pumpkin and friendly ghost" loading="lazy" width="500" height="460" />
-							<div class="visit-card"><span class="status-dot"></span><strong>SEE YOU AT TNHS!</strong><small>Spooky smiles await you ♡</small></div>
+							<div class="visit-card"><span class="status-dot"></span><strong>SEE YOU AT TNHS!</strong><small>Spooky smiles await you</small></div>
 						</div>
 					</div>
 				</div>
@@ -240,26 +241,26 @@
 					</div>
 					<div class="faq-list">
 						<details>
-							<summary>Can I request my own fuzzy wire character?<span>+</span></summary>
+							<summary>Can I request my own fuzzy wire character?<i data-lucide="plus" aria-hidden="true"></i></summary>
 							<p>Yes! Choose a product marked “Customizable,” pick a character and colors, and share your idea in the notes. The team will confirm what can be made before accepting your order.</p>
 						</details>
 						<details>
-							<summary>What is inside a mystery pouch?<span>+</span></summary>
+							<summary>What is inside a mystery pouch?<i data-lucide="plus" aria-hidden="true"></i></summary>
 							<p>That’s the surprise! Contents vary. We check that every pouch is complete, clean, packed securely, and in good condition before selling.</p>
 						</details>
 						<details>
-							<summary>Does checking out here confirm my order?<span>+</span></summary>
+							<summary>Does checking out here confirm my order?<i data-lucide="plus" aria-hidden="true"></i></summary>
 							<p>
 								Not automatically. The site prepares an order request. If online submissions have been enabled by the team, you’ll see a successful submission message; otherwise, save your order slip and coordinate with the booth
 								team. Stock, total price, and payment are confirmed in person.
 							</p>
 						</details>
 						<details>
-							<summary>Can I have my order delivered?<span>+</span></summary>
+							<summary>Can I have my order delivered?<i data-lucide="plus" aria-hidden="true"></i></summary>
 							<p>Our current website focuses on school-booth pickup at Taguig National High School. Ask our team directly if any other arrangements are available.</p>
 						</details>
 						<details>
-							<summary>Where can I join JengaBOO or Minute to Win It?<span>+</span></summary>
+							<summary>Where can I join JengaBOO or Minute to Win It?<i data-lucide="plus" aria-hidden="true"></i></summary>
 							<p>Visit the Charmistry Co. booth inside Taguig National High School, beside the “I Love TNHS” signage. Game rules and participation details are explained at the booth.</p>
 						</details>
 					</div>
@@ -268,12 +269,12 @@
 
 			<section class="closing-banner">
 				<div class="container closing-layout">
-					<span class="closing-star" aria-hidden="true">✳</span>
+					<span class="closing-star" aria-hidden="true"><i data-lucide="sparkles"></i></span>
 					<div>
 						<!-- <div class="closing-kicker">A LITTLE CUTE. A LITTLE SPOOKY. ALL YOU.</div> -->
 						<h2>Ready to find your <em>boo-tiful</em> thing?</h2>
 					</div>
-					<a class="button button-dark" href="#shop">Let's go shopping <span aria-hidden="true">↗</span></a>
+					<a class="button button-dark" href="#shop">Let's go shopping <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
 				</div>
 			</section>
 		</main>
@@ -301,7 +302,7 @@
 				</div>
 			</div>
 			<div class="container footer-bottom">
-				<span>© <span id="year"></span> Charmistry Co. Made with ♡</span><span>A school-based creative pop-up. Have a BOO-tiful day!</span>
+				<span>© <span id="year"></span> Charmistry Co. Made with <i data-lucide="heart" aria-hidden="true"></i></span><span>A school-based creative pop-up. Have a BOO-tiful day!</span>
 			</div>
 		</footer>
 
@@ -310,23 +311,23 @@
 			<div class="drawer-header">
 				<div>
 					<div class="drawer-eyebrow">YOUR LITTLE TREASURE HAUL</div>
-					<h2 id="cart-title">My spooky bag <span>♡</span></h2>
+					<h2 id="cart-title">My spooky bag <i data-lucide="heart" aria-hidden="true"></i></h2>
 				</div>
-				<button class="icon-button" type="button" id="cart-close" aria-label="Close bag">×</button>
+				<button class="icon-button" type="button" id="cart-close" aria-label="Close bag"><i data-lucide="x"></i></button>
 			</div>
 			<div class="cart-items" id="cart-items"></div>
 			<div class="cart-footer">
 				<div class="cart-total-row"><span>Estimated subtotal</span><strong id="cart-subtotal">₱0</strong></div>
 				<p class="small-muted">Items, prices, and availability are confirmed at the booth. No online payment is taken here.</p>
-				<button class="button button-primary button-full" type="button" id="checkout-open">Prepare order request <span>→</span></button><button class="text-button" type="button" id="keep-shopping">Keep exploring</button>
+				<button class="button button-primary button-full" type="button" id="checkout-open">Prepare order request <i data-lucide="arrow-right"></i></button><button class="text-button" type="button" id="keep-shopping">Keep exploring</button>
 			</div>
 		</aside>
 
 		<div class="modal-backdrop" id="customize-backdrop" hidden>
 			<section class="app-modal customize-modal" role="dialog" aria-modal="true" aria-labelledby="customize-title" tabindex="-1">
-				<button type="button" class="icon-button modal-close" data-close-modal="customize" aria-label="Close customization">×</button>
+				<button type="button" class="icon-button modal-close" data-close-modal="customize" aria-label="Close customization"><i data-lucide="x"></i></button>
 				<div class="modal-tag">YOUR IDEA, OUR LITTLE MAGIC</div>
-				<h2 id="customize-title">Make it yours ✳</h2>
+				<h2 id="customize-title">Make it yours <i data-lucide="sparkles"></i></h2>
 				<p id="customize-product-name" class="modal-subtitle"></p>
 				<form id="customize-form">
 					<div class="form-grid">
@@ -355,14 +356,14 @@
 						><textarea id="custom-notes" rows="3" maxlength="180" placeholder="Tell us more about your dream character..."></textarea>
 					</label>
 					<p class="small-muted">Custom requests depend on available materials and will be confirmed by our team.</p>
-					<button class="button button-primary button-full" type="submit">Add my custom friend to bag <span>♡</span></button>
+					<button class="button button-primary button-full" type="submit">Add my custom friend to bag <i data-lucide="heart"></i></button>
 				</form>
 			</section>
 		</div>
 
 		<div class="modal-backdrop" id="checkout-backdrop" hidden>
 			<section class="app-modal checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title" tabindex="-1">
-				<button type="button" class="icon-button modal-close" data-close-modal="checkout" aria-label="Close checkout">×</button>
+				<button type="button" class="icon-button modal-close" data-close-modal="checkout" aria-label="Close checkout"><i data-lucide="x"></i></button>
 				<div id="checkout-form-view">
 					<div class="modal-tag">ONE MORE STEP, BOO!</div>
 					<h2 id="checkout-title">Your order request</h2>
@@ -386,11 +387,11 @@
 							><input type="checkbox" id="checkout-agree" required /><span>I understand this is an order <strong>request</strong>, not a confirmed purchase, and payment is arranged with the booth team.</span></label
 						>
 						<div id="checkout-error" class="form-error" role="alert" hidden></div>
-						<button class="button button-primary button-full" type="submit" id="checkout-submit">Prepare my order slip <span>→</span></button>
+						<button class="button button-primary button-full" type="submit" id="checkout-submit">Prepare my order slip <i data-lucide="arrow-right"></i></button>
 					</form>
 				</div>
 				<div id="checkout-result-view" hidden>
-					<div id="checkout-result-icon" class="result-icon">♡</div>
+					<div id="checkout-result-icon" class="result-icon"><i data-lucide="heart"></i></div>
 					<h2 id="checkout-result-heading">Order slip ready!</h2>
 					<p id="checkout-result-text" class="modal-subtitle"></p>
 					<div id="checkout-result-detail" class="order-receipt"></div>

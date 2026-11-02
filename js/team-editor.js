@@ -14,7 +14,10 @@
 		if (saved && Array.isArray(saved.products) && Array.isArray(saved.games) && saved.settings && typeof saved.settings === 'object') state = saved
 	} catch (_) {}
 	function status(msg) {
-		$('#editor-status').textContent = msg
+		const el = $('#editor-status')
+		const icon = msg.startsWith('✓') ? 'check-circle' : msg.startsWith('⚠') ? 'alert-triangle' : 'info'
+		el.innerHTML = `<i data-lucide="${icon}" aria-hidden="true"></i> ${escapeHtml(msg.replace(/^[✓⚠]\s*/, ''))}`
+		window.lucide?.createIcons({ root: el, attrs: { 'stroke-width': 2 } })
 	}
 	function remember() {
 		try {
@@ -221,5 +224,6 @@
 		showTab(tab)
 		status('Browser drafts reset to the website files.')
 	})
+	window.lucide?.createIcons({ attrs: { 'stroke-width': 2 } })
 	showTab('products')
 })()

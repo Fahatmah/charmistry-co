@@ -356,3 +356,16 @@ button.danger {
 		padding: 17px;
 	}
 }
+
+
+/* Lucide icon system */
+[data-lucide], .lucide {
+	width: 1em;
+	height: 1em;
+	stroke-width: 2;
+	vertical-align: -0.14em;
+	flex: 0 0 auto;
+}
+.button .lucide, .cart-trigger .lucide { width: 16px; height: 16px; }
+.icon-button .lucide { width: 19px; height: 19px; }
+.step-icon .lucide, .check-icon .lucide, .location-icon .lucide { width: 1.35em; height: 1.35em; }

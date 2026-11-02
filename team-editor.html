@@ -8,6 +8,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="css/editor.css" />
+		<script defer src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
 		<script defer src="js/settings.js"></script>
 		<script defer src="js/catalog.js"></script>
 		<script defer src="js/team-editor.js"></script>
@@ -15,7 +16,7 @@
 	<body>
 		<header class="ed-header">
 			<a href="index.html" class="ed-brand"><img src="assets/images/favicon.svg" width="40" height="40" alt="" /> Charmistry Co. <span>TEAM EDITOR</span></a
-			><a class="back-link" href="index.html">← View storefront</a>
+			><a class="back-link" href="index.html"><i data-lucide="arrow-left" aria-hidden="true"></i> View storefront</a>
 		</header>
 		<main class="ed-container">
 			<div class="editor-hero">
@@ -25,19 +26,19 @@
 					<p>Edit products, stock, prices, game descriptions and booth information, then download replacement JavaScript files to publish your updates.</p>
 				</div>
 				<div class="editor-warning">
-					<strong>⚠ Local file editor only</strong><br />This is not a password-protected online admin or a shared live database. Edits stay in this browser until you download files and replace the originals. Do not publish
+					<strong><i data-lucide="alert-triangle" aria-hidden="true"></i> Local file editor only</strong><br />This is not a password-protected online admin or a shared live database. Edits stay in this browser until you download files and replace the originals. Do not publish
 					<code>team-editor.html</code> on your public website.
 				</div>
 			</div>
 			<nav class="editor-tabs" aria-label="Edit sections">
-				<button type="button" class="selected" data-tab="products" aria-pressed="true">🛍 Products <span id="prod-count">0</span></button><button type="button" data-tab="games" aria-pressed="false">🎲 Booth games</button
-				><button type="button" data-tab="settings" aria-pressed="false">⚙ Site settings</button>
+				<button type="button" class="selected" data-tab="products" aria-pressed="true"><i data-lucide="package" aria-hidden="true"></i> Products <span id="prod-count">0</span></button><button type="button" data-tab="games" aria-pressed="false"><i data-lucide="gamepad-2" aria-hidden="true"></i> Booth games</button
+				><button type="button" data-tab="settings" aria-pressed="false"><i data-lucide="settings" aria-hidden="true"></i> Site settings</button>
 			</nav>
 			<div class="editor-layout">
 				<aside class="editor-sidebar">
 					<div class="sidebar-title">
 						<h2 id="item-heading">Products</h2>
-						<button type="button" id="add-entry" class="tiny-button">+ Add</button>
+						<button type="button" id="add-entry" class="tiny-button"><i data-lucide="plus" aria-hidden="true"></i> Add</button>
 					</div>
 					<div id="entry-list" class="entry-list"></div>
 					<div class="sidebar-help">Choose an item to edit its details. Save changes before selecting another item.</div>
@@ -127,7 +128,7 @@
 					<small>Only the downloaded replacements update your real storefront. Browser drafts do not change site files or teammates' browsers.</small>
 				</div>
 				<div class="export-buttons">
-					<button class="primary" type="button" id="export-catalog">↓ Download catalog.js</button><button class="secondary" type="button" id="export-settings">↓ Download settings.js</button
+					<button class="primary" type="button" id="export-catalog"><i data-lucide="download" aria-hidden="true"></i> Download catalog.js</button><button class="secondary" type="button" id="export-settings"><i data-lucide="download" aria-hidden="true"></i> Download settings.js</button
 					><button class="danger" type="button" id="reset-drafts">Reset browser drafts</button>
 				</div>
 			</div>

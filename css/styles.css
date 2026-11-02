@@ -222,12 +222,9 @@ summary:focus-visible {
 	background: transparent;
 	padding: 12px;
 }
-.menu-toggle span {
-	display: block;
-	height: 2px;
-	width: 100%;
-	background: white;
-	margin: 4px 0;
+.menu-toggle .lucide {
+	width: 24px;
+	height: 24px;
 }
 .mobile-nav {
 	padding: 14px 28px 24px;
@@ -558,8 +555,9 @@ summary:focus-visible {
 	transform: rotate(-15deg);
 	margin-right: 90px;
 }
-.heading-doodle span {
-	font-size: 39px;
+.heading-doodle .lucide:last-child {
+	width: 39px;
+	height: 39px;
 	color: #a37aec;
 }
 .kicker {
@@ -717,7 +715,7 @@ summary:focus-visible {
 	background: radial-gradient(circle at 45% 44%, #d6c9ef, #8e83b0);
 }
 .product-image-wrap::before {
-	content: '✳';
+	content: none;
 	position: absolute;
 	top: -16px;
 	right: 13px;
@@ -725,7 +723,7 @@ summary:focus-visible {
 	font-size: 106px;
 }
 .product-image-wrap::after {
-	content: '✦';
+	content: none;
 	position: absolute;
 	bottom: 9px;
 	left: 14px;
@@ -891,7 +889,7 @@ summary:focus-visible {
 	overflow: hidden;
 }
 .games-section::before {
-	content: '✳';
+	content: none;
 	font-size: 210px;
 	color: #ffffff07;
 	position: absolute;
@@ -1066,7 +1064,7 @@ summary:focus-visible {
 	color: #ffffff0b;
 	font-size: 160px;
 }
-.about-deco span {
+.about-deco .lucide:last-child {
 	font-size: 60px;
 }
 .about-main {
@@ -1249,11 +1247,13 @@ summary:focus-visible {
 .faq-list summary::-webkit-details-marker {
 	display: none;
 }
-.faq-list summary span {
-	font: 600 27px/1 var(--head);
+.faq-list summary .lucide {
+	width: 22px;
+	height: 22px;
 	color: var(--orange);
+	transition: transform 0.2s ease;
 }
-.faq-list details[open] summary span {
+.faq-list details[open] summary .lucide {
 	transform: rotate(45deg);
 }
 .faq-list details p {
@@ -1435,8 +1435,9 @@ summary:focus-visible {
 	text-align: center;
 	margin: 65px 0;
 }
-.cart-empty .emoji {
-	font-size: 63px;
+.cart-empty .emoji .lucide {
+	width: 63px;
+	height: 63px;
 }
 .cart-empty h3 {
 	font: 600 24px var(--head);
@@ -1763,3 +1764,20 @@ summary:focus-visible {
 		white-space: pre-wrap !important;
 	}
 }
+
+
+/* Lucide icon system */
+[data-lucide], .lucide {
+	width: 1em;
+	height: 1em;
+	stroke-width: 2;
+	vertical-align: -0.14em;
+	flex: 0 0 auto;
+}
+.button .lucide, .cart-trigger .lucide { width: 16px; height: 16px; }
+.icon-button .lucide { width: 19px; height: 19px; }
+.step-icon .lucide, .check-icon .lucide, .location-icon .lucide { width: 1.35em; height: 1.35em; }
+
+.announcement-sparkle .lucide { width: 15px; height: 15px; }
+.games-spark .lucide, .closing-star .lucide { width: 1em; height: 1em; }
+.about-deco .lucide { width: 1em; height: 1em; }

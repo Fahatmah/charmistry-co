@@ -10,6 +10,7 @@
 	const money = (n) => `${S.currencySymbol || '₱'}${Number(n || 0).toLocaleString('en-PH', { minimumFractionDigits: 0, maximumFractionDigits: 2 })}`
 	const productById = (id) => P.find((p) => p.id === id)
 	const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1)
+	const refreshIcons = (root = document) => window.lucide?.createIcons({ root, attrs: { 'stroke-width': 2 } })
 	let filter = 'all',
 		term = '',
 		sort = 'featured',
@@ -60,7 +61,8 @@
 			social.append(a)
 		}
 		if (S.orderEndpoint) {
-			$('#checkout-submit').innerHTML = 'Send order request <span>→</span>'
+			$('#checkout-submit').innerHTML = 'Send order request <i data-lucide="arrow-right"></i>'
+			refreshIcons($('#checkout-submit'))
 		}
 	}
 	function renderProducts() {
@@ -75,19 +77,21 @@
 				const out = (Number(p.stock) || 0) <= 0
 				return `<article class="product-card ${out ? 'product-sold-out' : ''}">
       <div class="product-image-wrap ${esc(p.color || 'purple')}"><span class="product-badge">${out ? 'SOLD OUT' : esc(p.badge || 'HANDMADE')}</span><img src="${esc(p.image)}" alt="Illustration of ${esc(p.name)}" loading="lazy" width="430" height="350"></div>
-      <div class="product-info"><div class="product-category">${p.category === 'mystery' ? '✦ Mystery pouch' : '✳ Fuzzy wire character'}</div>
+      <div class="product-info"><div class="product-category">${p.category === 'mystery' || p.category === 'second product' ? '<i data-lucide="sparkles"></i> Mystery pouch' : '<i data-lucide="sparkles"></i> Fuzzy wire character'}</div>
         <div class="product-title-row"><h3>${esc(p.name)}</h3><span class="product-price">${money(p.price)}</span></div><p class="product-desc">${esc(p.description)}</p>
-        <div class="product-stock">${out ? 'Currently unavailable' : p.customizable ? '✎ Your character, your colors' : '✦ A surprise inside every pouch'}</div>
-        <div class="product-action"><button class="button ${out ? 'button-outline' : 'button-primary'}" type="button" data-add="${esc(p.id)}" ${out ? 'disabled' : ''}>${out ? 'Out of stock' : p.customizable ? 'Customize yours' : 'Add to my bag'} <span aria-hidden="true">${p.customizable ? '✳' : '↗'}</span></button></div>
+        <div class="product-stock">${out ? 'Currently unavailable' : p.customizable ? '<i data-lucide="palette"></i> Your character, your colors' : '<i data-lucide="gift"></i> A surprise inside every pouch'}</div>
+        <div class="product-action"><button class="button ${out ? 'button-outline' : 'button-primary'}" type="button" data-add="${esc(p.id)}" ${out ? 'disabled' : ''}>${out ? 'Out of stock' : p.customizable ? 'Customize yours' : 'Add to my bag'} <span aria-hidden="true">${p.customizable ? '<i data-lucide="sparkles"></i>' : '<i data-lucide="arrow-up-right"></i>'}</span></button></div>
       </div></article>`
 			})
 			.join('')
+		refreshIcons($('#product-grid'))
 	}
 	function renderGames() {
 		$('#games-grid').innerHTML = A.map(
 			(g) =>
-				`<article class="game-card ${esc(g.color || 'purple')}"><img src="${esc(g.image)}" alt="Illustration of ${esc(g.name)}" loading="lazy" width="300" height="240"><div class="game-card-body"><div class="game-type">✦ ${esc(g.type || 'BOOTH GAME')}</div><h3>${esc(g.name)}</h3><strong>${esc(g.tagline || '')}</strong><p>${esc(g.description || '')}</p></div></article>`,
+				`<article class="game-card ${esc(g.color || 'purple')}"><img src="${esc(g.image)}" alt="Illustration of ${esc(g.name)}" loading="lazy" width="300" height="240"><div class="game-card-body"><div class="game-type"><i data-lucide="sparkles"></i> ${esc(g.type || 'BOOTH GAME')}</div><h3>${esc(g.name)}</h3><strong>${esc(g.tagline || '')}</strong><p>${esc(g.description || '')}</p></div></article>`,
 		).join('')
+		refreshIcons($('#games-grid'))
 	}
 	function renderCart() {
 		$('#cart-count').textContent = Cart.count()
@@ -104,7 +108,8 @@
 						return `<article class="cart-item"><img class="cart-thumb" src="${esc(p.image)}" alt="" width="91" height="94"><div class="cart-item-info"><div class="cart-item-title"><h3>${esc(p.name)}</h3><span class="cart-item-price">${money(p.price * it.qty)}</span></div><div class="cart-item-meta">${esc(meta)}</div><div class="cart-qty"><button type="button" data-cart-action="minus" data-key="${key}" aria-label="Decrease quantity of ${esc(p.name)}">−</button><span>${it.qty}</span><button type="button" data-cart-action="plus" data-key="${key}" aria-label="Increase quantity of ${esc(p.name)}">+</button><button class="cart-remove" type="button" data-cart-action="remove" data-key="${key}">Remove</button></div></div></article>`
 					})
 					.join('')
-			: `<div class="cart-empty"><div class="emoji">👻</div><h3>Your bag is feeling lonely!</h3><p>Our cute little treats are ready to meet you.</p><button class="button button-primary" id="empty-shop" type="button">Explore the collection ↗</button></div>`
+			: `<div class="cart-empty"><div class="emoji"><i data-lucide="ghost"></i></div><h3>Your bag is feeling lonely!</h3><p>Our cute little treats are ready to meet you.</p><button class="button button-primary" id="empty-shop" type="button">Explore the collection</button></div>`
+		refreshIcons($('#cart-items'))
 	}
 	function lockScroll() {
 		document.body.classList.add('lock-scroll')
@@ -144,7 +149,7 @@
 	}
 	function addProduct(id) {
 		if (Cart.add(id)) {
-			toast('A little magic added to your bag! ♡')
+			toast('A little magic added to your bag!')
 			openCart()
 		} else toast('That item has reached its available stock.')
 	}
@@ -212,7 +217,7 @@
 		currentOrderText = orderText(order, submitted)
 		$('#checkout-form-view').hidden = true
 		$('#checkout-result-view').hidden = false
-		$('#checkout-result-heading').textContent = submitted ? 'Request sent! ♡' : 'Order slip ready! ♡'
+		$('#checkout-result-heading').textContent = submitted ? 'Request sent!' : 'Order slip ready!'
 		$('#checkout-result-text').textContent = submitted
 			? 'Your order request was submitted to the configured team form. The team still needs to confirm your items and pickup.'
 			: 'This order has NOT been sent to our team. Download, copy, or print this slip and share it with the booth staff to request your items.'
@@ -269,7 +274,8 @@
 			showError(`${e.message}. Your bag is still saved. Try again or ask the team for help.`)
 		} finally {
 			button.disabled = false
-			button.innerHTML = 'Send order request <span>→</span>'
+			button.innerHTML = 'Send order request <i data-lucide="arrow-right"></i>'
+			refreshIcons(button)
 		}
 	}
 	function showError(s) {
@@ -400,6 +406,8 @@
 			const open = menu.getAttribute('aria-expanded') === 'true'
 			menu.setAttribute('aria-expanded', String(!open))
 			menu.setAttribute('aria-label', open ? 'Open menu' : 'Close menu')
+			menu.innerHTML = `<i data-lucide="${open ? 'menu' : 'x'}" aria-hidden="true"></i>`
+			refreshIcons(menu)
 			nav.hidden = open
 		})
 		$$('#mobile-nav a').forEach((a) =>
@@ -407,12 +415,14 @@
 				nav.hidden = true
 				menu.setAttribute('aria-expanded', 'false')
 				menu.setAttribute('aria-label', 'Open menu')
+				menu.innerHTML = '<i data-lucide="menu" aria-hidden="true"></i>'
+				refreshIcons(menu)
 			}),
 		)
 	}
 	function addProductWithCustom(id, custom) {
 		if (Cart.add(id, custom)) {
-			toast('Your custom cutie is in the bag! ♡')
+			toast('Your custom cutie is in the bag!')
 			openCart()
 		} else toast('Sorry! No more stock is available for that item.')
 	}
@@ -430,6 +440,7 @@
 		}
 	}
 	setupContent()
+	refreshIcons()
 	renderProducts()
 	renderGames()
 	renderCart()
