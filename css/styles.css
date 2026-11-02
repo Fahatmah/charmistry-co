@@ -931,11 +931,11 @@ summary:focus-visible {
 	box-shadow: 10px 12px 0 #1b0c253b;
 }
 .game-card img {
-	height: 183px;
+	height: 240px;
 	width: 100%;
-	object-fit: contain;
+	object-fit: 100%;
 	background: #c4a5e9;
-	padding: 13px;
+	padding: 13px 0px;
 }
 .game-card.orange img {
 	background: #f7bd83;
