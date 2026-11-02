@@ -1,0 +1,389 @@
+@media (max-width: 1130px) {
+	.desktop-nav {
+		gap: 16px;
+	}
+	.desktop-nav a {
+		font-size: 11px;
+	}
+	.brand-type {
+		font-size: 24px;
+	}
+	.hero h1 {
+		font-size: 66px;
+	}
+	.heading-doodle {
+		margin-right: 20px;
+	}
+	.shop-toolbar {
+		align-items: start;
+		flex-direction: column;
+	}
+	.toolbar-actions {
+		width: 100%;
+		justify-content: flex-end;
+	}
+}
+@media (max-width: 960px) {
+	.desktop-nav {
+		display: none;
+	}
+	.menu-toggle {
+		display: block;
+	}
+	.hero-grid {
+		grid-template-columns: 1fr 1fr;
+		gap: 0;
+	}
+	.hero h1 {
+		font-size: 58px;
+	}
+	.hero-art {
+		width: 125%;
+	}
+	.hero-trust {
+		font-size: 9px;
+	}
+	.floating-note {
+		font-size: 8px;
+	}
+	.floating-note strong {
+		font-size: 10px;
+	}
+	.product-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+	.games-layout {
+		grid-template-columns: 1fr;
+		gap: 30px;
+	}
+	.games-intro {
+		max-width: 650px;
+	}
+	.game-cards {
+		max-width: 650px;
+	}
+	.craft-layout,
+	.visit-layout {
+		gap: 30px;
+	}
+	.about-panel {
+		padding: 40px;
+	}
+	.footer-top {
+		grid-template-columns: 2fr 1fr 1fr;
+	}
+	.footer-location {
+		grid-column: 1/-1;
+	}
+	.closing-star {
+		font-size: 60px;
+	}
+}
+@media (max-width: 700px) {
+	.container {
+		width: min(100% - 34px, 500px);
+	}
+	.section {
+		padding: 73px 0;
+	}
+	.nav-shell {
+		height: 70px;
+	}
+	.brand-icon {
+		width: 39px;
+		height: 39px;
+	}
+	.brand-type {
+		font-size: 24px;
+	}
+	.cart-trigger {
+		padding: 9px;
+	}
+	.cart-label {
+		display: none;
+	}
+	.hero-grid {
+		display: flex;
+		flex-direction: column;
+		min-height: unset;
+		gap: 0;
+	}
+	.hero-copy {
+		padding: 56px 0 5px;
+		max-width: 100%;
+	}
+	.hero h1 {
+		font-size: clamp(50px, 11vw, 72px);
+		max-width: 500px;
+	}
+	.hero-lede {
+		font-size: 13px;
+	}
+	.hero-art-wrap {
+		width: 100%;
+		height: 390px;
+		align-self: unset;
+		overflow: visible;
+	}
+	.hero-art {
+		width: 100%;
+		max-height: 430px;
+	}
+	.note-top {
+		right: 1%;
+		top: 9%;
+	}
+	.note-bottom {
+		left: 1%;
+		bottom: 13%;
+	}
+	.hero-ticker {
+		margin-top: -2px;
+	}
+	.hero-trust {
+		margin-top: 22px;
+	}
+	.section-heading h2,
+	.games-intro h2,
+	.craft-content h2,
+	.about-main h2,
+	.visit-copy h2 {
+		font-size: clamp(35px, 8vw, 48px);
+	}
+	.heading-doodle {
+		display: none;
+	}
+	.shop-toolbar {
+		gap: 13px;
+	}
+	.filters {
+		gap: 6px;
+	}
+	.filter-pill {
+		padding: 8px 10px;
+		font-size: 10px;
+	}
+	.toolbar-actions {
+		justify-content: stretch;
+		flex-wrap: nowrap;
+	}
+	.search-box {
+		flex: 1;
+		min-width: 0;
+	}
+	.search-box input {
+		width: 100%;
+	}
+	.sort-box select {
+		max-width: 150px;
+		padding: 10px;
+		font-size: 10px;
+	}
+	.steps-grid,
+	.craft-layout,
+	.visit-layout,
+	.about-panel {
+		grid-template-columns: 1fr;
+	}
+	.steps-grid {
+		gap: 13px;
+	}
+	.step-card {
+		padding: 24px;
+	}
+	.step-icon {
+		margin-bottom: 10px;
+	}
+	.game-cards {
+		gap: 12px;
+	}
+	.game-card img {
+		height: 145px;
+	}
+	.game-card-body {
+		padding: 13px;
+	}
+	.game-card h3 {
+		font-size: 23px;
+	}
+	.craft-layout {
+		gap: 5px;
+	}
+	.craft-art {
+		max-width: 410px;
+		margin: auto;
+	}
+	.craft-stamp {
+		width: 98px;
+		height: 98px;
+		left: 10px;
+		bottom: 10px;
+	}
+	.about-section {
+		padding-top: 25px;
+	}
+	.about-panel {
+		padding: 30px;
+	}
+	.about-side img {
+		height: 210px;
+	}
+	.visit-layout {
+		gap: 33px;
+	}
+	.visit-visual-inner {
+		min-height: 330px;
+	}
+	.visit-visual-inner > img {
+		max-height: 340px;
+	}
+	.visit-card {
+		left: -11px;
+	}
+	.faq-section {
+		padding: 72px 0;
+	}
+	.closing-layout {
+		flex-wrap: wrap;
+		gap: 12px;
+	}
+	.closing-star {
+		display: none;
+	}
+	.footer-top {
+		grid-template-columns: 1fr 1fr;
+		gap: 29px;
+	}
+	.footer-about {
+		grid-column: 1/-1;
+	}
+	.footer-location {
+		grid-column: 1/-1;
+	}
+	.footer-bottom {
+		flex-direction: column;
+		gap: 3px;
+	}
+}
+@media (max-width: 475px) {
+	.announcement {
+		font-size: 9px;
+	}
+	.brand-type {
+		font-size: 21px;
+	}
+	.brand-icon {
+		width: 36px;
+		height: 36px;
+	}
+	.hero-copy {
+		padding-top: 42px;
+	}
+	.hero h1 {
+		font-size: 48px;
+	}
+	.hero h1 .text-orange {
+		white-space: normal;
+	}
+	.hero-actions .button {
+		width: 100%;
+	}
+	.hero-art-wrap {
+		height: 325px;
+	}
+	.hero-art {
+		max-height: 350px;
+	}
+	.floating-note {
+		padding: 9px 11px;
+	}
+	.product-grid {
+		gap: 10px;
+	}
+	.product-info {
+		padding: 13px 12px 15px;
+	}
+	.product-card h3 {
+		font-size: 20px;
+		min-height: 48px;
+	}
+	.product-price {
+		font-size: 19px;
+	}
+	.product-desc {
+		font-size: 10px;
+		min-height: 65px;
+	}
+	.product-badge {
+		top: 10px;
+		left: 9px;
+		font-size: 8px;
+		padding: 5px 7px;
+	}
+	.product-action .button {
+		font-size: 10px;
+	}
+	.product-image-wrap {
+		aspect-ratio: 1;
+	}
+	.game-cards {
+		grid-template-columns: 1fr;
+	}
+	.game-card img {
+		height: 196px;
+	}
+	.game-card-body {
+		padding: 20px;
+	}
+	.form-grid {
+		grid-template-columns: 1fr;
+		gap: 0;
+	}
+	.app-modal {
+		padding: 25px 19px;
+	}
+	.modal-close {
+		right: 12px;
+		top: 12px;
+	}
+	.result-actions {
+		flex-direction: column;
+	}
+	.result-actions .button {
+		width: 100%;
+	}
+}
+@media (max-width: 370px) {
+	.container {
+		width: calc(100% - 24px);
+	}
+	.hero h1 {
+		font-size: 43px;
+	}
+	.filter-pill {
+		font-size: 9px;
+		padding: 7px 8px;
+	}
+	.product-grid {
+		grid-template-columns: 1fr;
+	}
+	.product-card h3 {
+		min-height: 0;
+	}
+	.product-desc {
+		min-height: 0;
+	}
+	.product-image-wrap {
+		aspect-ratio: 1.3;
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}

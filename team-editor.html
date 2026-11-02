@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>Charmistry Co. — Team Catalog Editor</title>
+		<link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="css/editor.css" />
+		<script defer src="js/settings.js"></script>
+		<script defer src="js/catalog.js"></script>
+		<script defer src="js/team-editor.js"></script>
+	</head>
+	<body>
+		<header class="ed-header">
+			<a href="index.html" class="ed-brand"><img src="assets/images/favicon.svg" width="40" height="40" alt="" /> Charmistry Co. <span>TEAM EDITOR</span></a
+			><a class="back-link" href="index.html">← View storefront</a>
+		</header>
+		<main class="ed-container">
+			<div class="editor-hero">
+				<div>
+					<p class="overline">WORK ON YOUR OWN COPY · NO CODING REQUIRED</p>
+					<h1>Your little <em>control room.</em></h1>
+					<p>Edit products, stock, prices, game descriptions and booth information, then download replacement JavaScript files to publish your updates.</p>
+				</div>
+				<div class="editor-warning">
+					<strong>⚠ Local file editor only</strong><br />This is not a password-protected online admin or a shared live database. Edits stay in this browser until you download files and replace the originals. Do not publish
+					<code>team-editor.html</code> on your public website.
+				</div>
+			</div>
+			<nav class="editor-tabs" aria-label="Edit sections">
+				<button type="button" class="selected" data-tab="products" aria-pressed="true">🛍 Products <span id="prod-count">0</span></button><button type="button" data-tab="games" aria-pressed="false">🎲 Booth games</button
+				><button type="button" data-tab="settings" aria-pressed="false">⚙ Site settings</button>
+			</nav>
+			<div class="editor-layout">
+				<aside class="editor-sidebar">
+					<div class="sidebar-title">
+						<h2 id="item-heading">Products</h2>
+						<button type="button" id="add-entry" class="tiny-button">+ Add</button>
+					</div>
+					<div id="entry-list" class="entry-list"></div>
+					<div class="sidebar-help">Choose an item to edit its details. Save changes before selecting another item.</div>
+				</aside>
+				<section class="editor-panel">
+					<div id="editor-products" class="editor-screen">
+						<h2>Product details</h2>
+						<p class="panel-intro">Prices use Philippine pesos. Stock 0 marks a product as sold out. Product image path must point to an existing file.</p>
+						<form id="product-form" class="editor-form">
+							<div class="fields-row">
+								<label>Product ID <small>(unique; do not change after launch)</small><input name="id" required pattern="[a-zA-Z0-9_-]+" maxlength="80" /></label><label>Product name<input name="name" required maxlength="100" /></label>
+							</div>
+							<div class="fields-row">
+								<label
+									>Category<select name="category">
+										<option value="mystery">Mystery pouch</option>
+										<option value="fuzzy">Fuzzy wire</option>
+									</select></label
+								><label>Badge label<input name="badge" maxlength="40" /></label>
+							</div>
+							<label>Description<textarea name="description" rows="3" maxlength="320" required></textarea></label>
+							<div class="fields-row">
+								<label>Price (₱)<input type="number" name="price" min="0" step="0.01" required /></label><label>Stock available<input type="number" name="stock" min="0" step="1" required /></label>
+							</div>
+							<div class="fields-row">
+								<label>Image path <small>(e.g., assets/images/product-pouch.svg)</small><input name="image" required /></label
+								><label
+									>Image background<select name="color">
+										<option value="purple">Purple</option>
+										<option value="orange">Orange</option>
+										<option value="rose">Rose</option>
+										<option value="lilac">Lilac</option>
+										<option value="peach">Peach</option>
+										<option value="ice">Ice</option>
+									</select></label
+								>
+							</div>
+							<div class="fields-row">
+								<label>Featured order<input type="number" name="featured" min="1" max="999" step="1" required /></label><label class="toggle-label"><input name="customizable" type="checkbox" /> Allow custom character options</label>
+							</div>
+							<div class="editor-actions"><button class="primary" type="submit">Save product draft</button><button class="danger" id="remove-product" type="button">Delete product</button></div>
+						</form>
+					</div>
+					<div id="editor-games" class="editor-screen" hidden>
+						<h2>Booth game details</h2>
+						<p class="panel-intro">These are informational cards only. The site does not accept game reservations or payments.</p>
+						<form id="game-form" class="editor-form">
+							<label>Game ID<input name="id" required pattern="[a-zA-Z0-9_-]+" maxlength="80" /></label><label>Game name<input name="name" required maxlength="100" /></label
+							><label>Short tagline<input name="tagline" maxlength="120" /></label><label>Description<textarea name="description" rows="4" maxlength="320" required></textarea></label>
+							<div class="fields-row">
+								<label>Type label<input name="type" maxlength="60" /></label
+								><label
+									>Card color<select name="color">
+										<option value="purple">Purple</option>
+										<option value="orange">Orange</option>
+									</select></label
+								>
+							</div>
+							<label>Illustration path<input name="image" required /></label>
+							<div class="editor-actions"><button class="primary" type="submit">Save game draft</button><button class="danger" id="remove-game" type="button">Delete game</button></div>
+						</form>
+					</div>
+					<div id="editor-settings" class="editor-screen" hidden>
+						<h2>Shop settings</h2>
+						<p class="panel-intro">Use your team's actual information. Leave unused social links and the submission endpoint empty.</p>
+						<form id="settings-form" class="editor-form">
+							<div class="fields-row">
+								<label>Business name<input name="businessName" required /></label><label>Tagline<input name="tagline" /></label>
+							</div>
+							<label>Announcement banner<input name="announcement" /></label><label>Booth address<input name="locationAddress" required /></label><label>Booth landmark<input name="locationLandmark" /></label
+							><label>Google Maps full URL<input name="mapsUrl" type="url" /></label>
+							<div class="fields-row">
+								<label>Contact email (optional)<input name="contactEmail" type="email" /></label><label>Facebook page URL (optional)<input name="facebookUrl" type="url" /></label>
+							</div>
+							<label>Instagram profile URL (optional)<input name="instagramUrl" type="url" /></label
+							><label>Order submission endpoint (optional, Formspree HTTPS URL)<input name="orderEndpoint" type="url" placeholder="https://formspree.io/f/your-id" /></label
+							><label class="toggle-label"><input name="demoMode" type="checkbox" /> Show demo-pricing warning to visitors</label>
+							<div class="editor-actions"><button class="primary" type="submit">Save settings draft</button></div>
+						</form>
+					</div>
+				</section>
+			</div>
+			<div class="export-panel">
+				<div>
+					<h2>Ready to publish?</h2>
+					<p>1. Save your edits. 2. Download the updated files below. 3. Replace the same-named files in your website's <code>js/</code> folder. 4. Reload the storefront and verify it.</p>
+					<small>Only the downloaded replacements update your real storefront. Browser drafts do not change site files or teammates' browsers.</small>
+				</div>
+				<div class="export-buttons">
+					<button class="primary" type="button" id="export-catalog">↓ Download catalog.js</button><button class="secondary" type="button" id="export-settings">↓ Download settings.js</button
+					><button class="danger" type="button" id="reset-drafts">Reset browser drafts</button>
+				</div>
+			</div>
+			<p id="editor-status" class="editor-status" role="status" aria-live="polite"></p>
+		</main>
+	</body>
+</html>
